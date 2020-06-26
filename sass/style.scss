@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
 /* Variables */
 
@@ -33,7 +33,7 @@ body {
   font-size: 22px;
   text-transform: uppercase;
   font-family: $font-header;
-  font-weight: 600;
+  font-weight: 700;
   span {
     text-transform: none;
     font-weight: 400;
@@ -81,7 +81,7 @@ body {
   margin: 0;
   padding: 0;
   .active {
-    font-weight: bold;
+    font-weight: 900;
   }
 }
 
