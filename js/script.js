@@ -38,15 +38,11 @@ function titleClickHandler(event){
     console.log(targetArticle);
 }
 
-const links = document.querySelectorAll('.titles a');
 
-for (let link of links) {
-    link.addEventListener('click', titleClickHandler);
-}
 
 const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
 
 function generateTitleLinks(){
 
@@ -58,25 +54,34 @@ function generateTitleLinks(){
     /* for each article */
 
     const articles = document.querySelectorAll(optArticleSelector);
+    let html = '';
+
         for (let article of articles) {
 
-        /* get the article id */
-
+            /* get the article id */
             const articleId = article.getAttribute('id');
 
-        /* find the title element */
+            /* find the title element */
             const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
-        /* get the title from the title element */
+            /* get the title from the title element */
             const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
             console.log(linkHTML);
 
-        /* create HTML of the link */
-           titleList.insertAdjacentHTML('afterend', titleList.innerHTML + linkHTML);
-
-        /* insert link into titleList */
+            /* create HTML of the link */
+            //titleList.innerHTML = titleList.innerHTML + linkHTML;
+            // titleList.insertAdjacentHTML('afterend', linkHTML); dlaczego odwraca kolejność?
+            
+            /* insert link into titleList */
+            html = html + linkHTML; 
         }
 
+    titleList.innerHTML = html;
+    const links = document.querySelectorAll('.titles a');
+
+        for (let link of links) {
+            link.addEventListener('click', titleClickHandler);
+        }
 }
 
 generateTitleLinks();
