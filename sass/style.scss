@@ -1,13 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Lato:wght@100;400;700;900&display=swap');
 
 /* Variables */
 
-$color-light: #fff;
-$color-dark: #444;
 
-$font-logo: 'Sacramento', cursive;
-$font-header: 'Oswald', sans-serif;
-$font-text: 'Source Sans Pro', sans-serif;
+$color-light: #fff;
+$color-medium: #119DA4;
+$color-dark: #13505B;
+$color-superdark: #040404;
+
+
+$font-logo: 'Dancing Script', cursive;
+$font-header: 'Bebas Neue', cursive;
+$font-text: 'Lato', sans-serif;
 
 /* Global */
 
@@ -18,7 +22,7 @@ $font-text: 'Source Sans Pro', sans-serif;
 body {
   background: $color-light;
   font-family: $font-text;
-  color: $color-dark;
+  color: $color-superdark;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
@@ -31,9 +35,8 @@ body {
 
 .section-title {
   font-size: 22px;
-  text-transform: uppercase;
   font-family: $font-header;
-  font-weight: 700;
+  color: $color-dark;
   span {
     text-transform: none;
     font-weight: 400;
@@ -41,6 +44,14 @@ body {
   }
 }
 
+a {
+    text-decoration: none;
+    color: $color-medium;
+}
+
+a:hover {
+    transition: all 0.3s;
+}
 /* Layout */
 
 .wrapper {
@@ -54,13 +65,15 @@ body {
 
 .posts {
   flex: 2 0 0;
+  position: relative;
+  height: fit-content;
 }
 
 .sidebar, .posts {
   background: $color-light;
   margin-right: 10px;
   padding: 40px;
-  border: 1px solid $color-dark;
+  border: 1px solid $color-medium;
   border-radius: 5px;
 }
 
@@ -68,10 +81,10 @@ body {
 
 .logo {
   font-family: $font-logo;
-  font-weight: 400;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color: $color-medium;
 }
 
 /* Lists */
@@ -80,14 +93,19 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  font-weight: 400;
   .active {
     font-weight: 900;
+    font-size: 1.1em;
+    color: $color-dark;
+    text-decoration: none;
   }
 }
 
 .list-horizontal {
   li {
     display: inline-block;
+    color: $color-medium;
   }
 }
 
@@ -102,14 +120,23 @@ body {
 /* Post */
 
 .post {
-  display: none;
+  opacity: 0;
+  transition: all 1s ease;
+  visibility: hidden;
   &.active {
-    display: block;
+    position: absolute;
+    transition: all 1s ease;
+    top: 0;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
   }
 }
 
 .post-author {
-  font-style: italic;
+  color: $color-dark
+
 }
 
 .post-tags {
@@ -117,4 +144,8 @@ body {
   p {
     margin: 0 10px 0 0;
   }
+}
+
+.post-content {
+    font-weight: 400;
 }
