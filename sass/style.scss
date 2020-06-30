@@ -38,6 +38,7 @@ body {
   font-size: 22px;
   font-family: $font-header;
   color: $color-dark;
+
   span {
     text-transform: none;
     font-weight: 400;
@@ -46,12 +47,12 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: $color-medium;
+  text-decoration: none;
+  color: $color-medium;
 }
 
 a:hover {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 /* Layout */
 
@@ -98,6 +99,7 @@ a:hover {
   margin: 0;
   padding: 0;
   font-weight: 400;
+
   .active {
     font-weight: 900;
     font-size: 1.1em;
@@ -127,6 +129,7 @@ a:hover {
   opacity: 0;
   transition: all 0.5s ease;
   visibility: hidden;
+
   &.active {
     position: absolute;
     transition: all 0.5s ease;
@@ -139,17 +142,17 @@ a:hover {
 }
 
 .post-author {
-  color: $color-dark
-
+  color: $color-dark;
 }
 
 .post-tags {
   display: flex;
+
   p {
     margin: 0 10px 0 0;
   }
 }
 
 .post-content {
-    font-weight: 400;
+  font-weight: 400;
 }

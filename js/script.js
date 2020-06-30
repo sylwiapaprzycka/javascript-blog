@@ -16,7 +16,7 @@ function titleClickHandler(event){
     }
 
 
-    /* [DONE] add class 'active' to the clicked link */ 
+    /* [DONE] add class 'active' to the clicked link */
     clickedElement.classList.add('active');
     console.log(clickedElement);
 
@@ -51,7 +51,7 @@ function generateTitleLinks(){
     /* remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
-  
+
 
     /* for each article */
 
@@ -72,9 +72,9 @@ function generateTitleLinks(){
 
             /* create HTML of the link */
             // titleList.insertAdjacentHTML('beforeend', linkHTML);
-            
+
             /* insert link into titleList */
-            html = html + linkHTML; 
+            html = html + linkHTML;
         }
 
     titleList.innerHTML = html;
