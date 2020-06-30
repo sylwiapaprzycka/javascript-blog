@@ -26,6 +26,7 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.7;
+  margin: 0 auto;
 }
 
 .container {
@@ -66,7 +67,8 @@ a:hover {
 .posts {
   flex: 2 0 0;
   position: relative;
-  height: fit-content;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar, .posts {
@@ -85,6 +87,8 @@ a:hover {
   line-height: 1;
   text-align: center;
   color: $color-medium;
+  margin: 0;
+  padding: 50px 0;
 }
 
 /* Lists */
@@ -121,11 +125,11 @@ a:hover {
 
 .post {
   opacity: 0;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   visibility: hidden;
   &.active {
     position: absolute;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
     top: 0;
     height: auto;
     opacity: 1;

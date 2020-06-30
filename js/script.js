@@ -6,6 +6,8 @@ function titleClickHandler(event){
     console.log('Link was clicked!');
     console.log(event);
 
+    window.scrollTo(0, 0);
+
     /* [DONE] remove class 'active' from all article links  */
     const activeLinks = document.querySelectorAll('.titles a.active');
 
@@ -69,8 +71,7 @@ function generateTitleLinks(){
             console.log(linkHTML);
 
             /* create HTML of the link */
-            //titleList.innerHTML = titleList.innerHTML + linkHTML;
-            // titleList.insertAdjacentHTML('afterend', linkHTML); dlaczego odwraca kolejność?
+            // titleList.insertAdjacentHTML('beforeend', linkHTML);
             
             /* insert link into titleList */
             html = html + linkHTML; 
