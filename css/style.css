@@ -1,51 +1,141 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Lato:wght@100;400;700;900&display=swap");
 /* Variables */
 /* Global */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-body { background: #fff; font-family: "Lato", sans-serif; color: #040404; font-weight: 300; font-size: 16px; line-height: 1.7; margin: 0 auto; }
+body {
+  background: #fff;
+  font-family: "Lato", sans-serif;
+  color: #040404;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 auto;
+}
 
-.container { max-width: 1140px; margin: 0 auto; }
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
 
-.section-title { font-size: 22px; font-family: "Bebas Neue", cursive; color: #13505B; }
+.section-title {
+  font-size: 22px;
+  font-family: "Bebas Neue", cursive;
+  color: #13505B;
+}
 
-.section-title span { text-transform: none; font-weight: 400; color: #259aaf; }
+.section-title span {
+  text-transform: none;
+  font-weight: 400;
+  color: #259aaf;
+}
 
-a { text-decoration: none; color: #119DA4; }
+a {
+  text-decoration: none;
+  color: #119DA4;
+}
 
-a:hover { transition: all 0.3s; }
+a:hover {
+  transition: all 0.3s;
+}
 
 /* Layout */
-.wrapper { display: -ms-flexbox; display: flex; margin-left: 10px; }
+.wrapper {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+}
 
-.sidebar { -ms-flex: 1 0 0px; flex: 1 0 0; }
+.sidebar {
+  -ms-flex: 1 0 0px;
+      flex: 1 0 0;
+}
 
-.posts { -ms-flex: 2 0 0px; flex: 2 0 0; position: relative; height: 100vh; overflow: hidden; }
+.posts {
+  -ms-flex: 2 0 0px;
+      flex: 2 0 0;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
-.sidebar, .posts { background: #fff; margin-right: 10px; padding: 40px; border: 1px solid #119DA4; border-radius: 5px; }
+.sidebar, .posts {
+  background: #fff;
+  margin-right: 10px;
+  padding: 40px;
+  border: 1px solid #119DA4;
+  border-radius: 5px;
+}
 
 /* Logo */
-.logo { font-family: "Dancing Script", cursive; font-size: 104px; line-height: 1; text-align: center; color: #119DA4; margin: 0; padding: 50px 0; }
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 104px;
+  line-height: 1;
+  text-align: center;
+  color: #119DA4;
+  margin: 0;
+  padding: 50px 0;
+}
 
 /* Lists */
-.list { list-style-type: none; margin: 0; padding: 0; font-weight: 400; }
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
 
-.list .active { font-weight: 900; font-size: 1.1em; color: #13505B; text-decoration: none; }
+.list .active {
+  font-weight: 900;
+  font-size: 1.1em;
+  color: #13505B;
+  text-decoration: none;
+}
 
-.list-horizontal li { display: inline-block; color: #119DA4; }
+.list-horizontal li {
+  display: inline-block;
+  color: #119DA4;
+}
 
 /* Authors */
-.authors li { margin-bottom: 12px; }
+.authors li {
+  margin-bottom: 12px;
+}
 
 /* Post */
-.post { opacity: 0; transition: all 0.5s ease; visibility: hidden; }
+.post {
+  opacity: 0;
+  transition: all 0.5s ease;
+  visibility: hidden;
+}
 
-.post.active { position: absolute; transition: all 0.5s ease; top: 0; height: auto; opacity: 1; visibility: visible; z-index: 1; }
+.post.active {
+  position: absolute;
+  transition: all 0.5s ease;
+  top: 0;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
 
-.post-author { color: #13505B; }
+.post-author {
+  color: #13505B;
+}
 
-.post-tags { display: -ms-flexbox; display: flex; }
+.post-tags {
+  display: -ms-flexbox;
+  display: flex;
+}
 
-.post-tags p { margin: 0 10px 0 0; }
+.post-tags p {
+  margin: 0 10px 0 0;
+}
 
-.post-content { font-weight: 400; }
+.post-content {
+  font-weight: 400;
+}
+/*# sourceMappingURL=style.css.map */
