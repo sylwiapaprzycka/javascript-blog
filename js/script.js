@@ -229,7 +229,7 @@ function authorClickHandler(event) {
             link.classList.add('active');
         }
 
-  generateTitleLinks('[data-author~="' + authorName + '"]');
+  generateTitleLinks('[data-author="' + authorName + '"]');
 }
 
 function addClickListenersToAuthors(){
