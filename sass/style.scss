@@ -9,6 +9,7 @@ $color-dark: #13505B;
 $color-superdark: #040404;
 
 
+
 $font-logo: 'Dancing Script', cursive;
 $font-header: 'Bebas Neue', cursive;
 $font-text: 'Lato', sans-serif;
@@ -103,9 +104,60 @@ a:hover {
   .active {
     font-weight: 900;
     font-size: 1.1em;
-    color: $color-dark;
     text-decoration: none;
   }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tag-size-1 {
+  font-size: 14px;
+  color: #ff6b6b;
+  padding: 0 10px;
+    &.active {
+      font-size: 16px;
+    }
+}
+
+.tag-size-2 {
+  font-size: 18px;
+  color: #feca57;
+  padding: 0 5px;
+    &.active {
+      font-size: 20px;
+    }
+
+}
+
+.tag-size-3 {
+  font-size: 20px;
+  color: #54a0ff;
+  padding: 0 5px;
+    &.active {
+      font-size: 22px;
+    }
+}
+
+.tag-size-4 {
+  font-size: 24px;
+  color: $color-medium;
+  padding: 0 5px;
+    &.active {
+      font-size: 26px;;
+    }
+}
+
+.tag-size-5 {
+  font-size: 30px;
+  color: #341f97;
+  padding: 0 5px;
+    &.active {
+      font-size: 32px;
+    }
 }
 
 .list-horizontal {

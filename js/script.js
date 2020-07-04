@@ -47,7 +47,9 @@ const optArticleSelector = '.post',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post-author',
-    optTagsListSelector = '.tags.list';
+    optTagsListSelector = '.tags.list',
+    optCloudClassCount = 5,
+    optCloudClassPrefix = 'tag-size-';
 
 function generateTitleLinks(customSelector = ''){
 
@@ -89,6 +91,24 @@ function generateTitleLinks(customSelector = ''){
 }
 
 generateTitleLinks();
+
+function calculateTagsParams(tags) {
+  const params = {max: 0, min: 999999};
+    for (let tag in tags) {
+        params.max = Math.max(tags[tag], params.max);
+        params.min = Math.min(tags[tag], params.min);
+        console.log(tag + ' is used ' + tags[tag] + ' times');
+    }
+  return params;
+}
+
+function caclulateTagClass(count, params) {
+  const normalizedCount = count - params.min;
+  const normalizedMax = params.max - params.min;
+  const percentage = normalizedCount / normalizedMax;
+  const classNumber = Math.floor( percentage * (optCloudClassCount -1) +1);
+  return optCloudClassPrefix + classNumber;
+}
 
 function generateTags(){
   /* [NEW] create a new variable allTags with an empty object */
@@ -145,11 +165,15 @@ function generateTags(){
 
     /* [NEW] create variable for all links HTML code*/
     let allTagsHTML = '';
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams:', tagsParams);
 
       /* [NEW] START LOOP: for each tag in allTags: */
       for (let tag in allTags) {
         /* [NEW] generate code of a link and add it to allTagsHTML */
-        allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + '(' + allTags[tag] + ') </span> </a></li>';
+        allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + caclulateTagClass(allTags[tag], tagsParams) + '"><span>' + tag + '</span> </a></li>';
+        const tagLinkHTML = '<li>' + caclulateTagClass(allTags[tag], tagsParams) + '</li>';
+        console.log('taglinkHTML:', tagLinkHTML);
       }
       /* [NEW] END LOOP: for each tag in allTags: */
     /*[NEW] add html from allTagsHTML to taglist */

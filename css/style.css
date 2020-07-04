@@ -91,8 +91,66 @@ a:hover {
 .list .active {
   font-weight: 900;
   font-size: 1.1em;
-  color: #13505B;
   text-decoration: none;
+}
+
+.tags {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.tag-size-1 {
+  font-size: 14px;
+  color: #ff6b6b;
+  padding: 0 10px;
+}
+
+.tag-size-1.active {
+  font-size: 16px;
+}
+
+.tag-size-2 {
+  font-size: 18px;
+  color: #feca57;
+  padding: 0 5px;
+}
+
+.tag-size-2.active {
+  font-size: 20px;
+}
+
+.tag-size-3 {
+  font-size: 20px;
+  color: #54a0ff;
+  padding: 0 5px;
+}
+
+.tag-size-3.active {
+  font-size: 22px;
+}
+
+.tag-size-4 {
+  font-size: 24px;
+  color: #119DA4;
+  padding: 0 5px;
+}
+
+.tag-size-4.active {
+  font-size: 26px;
+}
+
+.tag-size-5 {
+  font-size: 30px;
+  color: #341f97;
+  padding: 0 5px;
+}
+
+.tag-size-5.active {
+  font-size: 32px;
 }
 
 .list-horizontal li {
