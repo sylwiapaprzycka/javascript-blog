@@ -164,6 +164,7 @@ a:hover {
   li {
     display: inline-block;
     color: $color-medium;
+    margin-right: 8px;
   }
 }
 
@@ -207,4 +208,5 @@ a:hover {
 
 .post-content {
   font-weight: 400;
+  padding-right: 40px;
 }
