@@ -1,4 +1,11 @@
+/* eslint-disable no-undef */
 'use strict';
+
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagHTML: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
+}
 
 const opt = {
   articleSelector: '.post',
@@ -66,7 +73,8 @@ function generateTitleLinks(customSelector = '') {
         /* find the title element */
         const articleTitle = article.querySelector(opt.titleSelector).innerHTML;
         /* get the title from the title element */
-        const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
+        const linkHTMLData = {id: articleId, title: articleTitle};
+        const linkHTML = templates.articleLink(linkHTMLData);
         console.log(linkHTML);
         /* create HTML of the link */
         // titleList.insertAdjacentHTML('beforeend', linkHTML);
@@ -136,7 +144,9 @@ function generateTags() {
         for (let tag of articleTagsArray) {
 
           /* generate HTML of the link */
-            const tagHTML = `<li><a href="#tag-${tag}"><span>${tag}</span></a></li>`;
+            // const tagHTML = `<li><a href="#tag-${tag}"><span>${tag}</span></a></li>`;
+            const tagHTMLData = { id: tag, title: tag };
+            const tagHTML = templates.tagHTML(tagHTMLData);
             console.log(tagHTML);
 
             /* add generated code to html variable */
@@ -269,7 +279,9 @@ function generateAuthors() {
         console.log(authorWrapper);
         let html = '';
         const articleAuthor = article.getAttribute('data-author');
-        const authorLink = `<a href="#author-${articleAuthor}"><span>by ${articleAuthor}</span></a>`;
+        // const authorLink = `<a href="#author-${articleAuthor}"><span>by ${articleAuthor}</span></a>`;
+        const authorLinkData = { id: articleAuthor, title: articleAuthor };
+        const authorLink = templates.articleLink(authorLinkData);
         html = html + authorLink
         console.log(authorLink);
         if (allAuthors[articleAuthor]) {
