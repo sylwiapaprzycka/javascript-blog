@@ -4,7 +4,6 @@ function titleClickHandler(event) {
     event.preventDefault();
     const clickedElement = this;
     console.log('Link was clicked!');
-    console.log(event);
 
     window.scrollTo(0, 0);
 
@@ -69,7 +68,7 @@ function generateTitleLinks(customSelector = '') {
           /* find the title element */
           const articleTitle = article.querySelector(optTitleSelector).innerHTML;
           /* get the title from the title element */
-          const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+          const linkHTML = `<li><a href="#${articleId}"><span>${articleTitle}</span></a></li>`;
           console.log(linkHTML);
           /* create HTML of the link */
           // titleList.insertAdjacentHTML('beforeend', linkHTML);
@@ -139,7 +138,7 @@ function generateTags() {
         for (let tag of articleTagsArray) {
 
           /* generate HTML of the link */
-            const tagHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span> </a></li>';
+            const tagHTML = `<li><a href="#tag-${tag}"><span>${tag}</span></a></li>`;
             console.log(tagHTML);
 
             /* add generated code to html variable */
@@ -172,8 +171,8 @@ function generateTags() {
       /* [NEW] START LOOP: for each tag in allTags: */
       for (let tag in allTags) {
         /* [NEW] generate code of a link and add it to allTagsHTML */
-        allTagsHTML += '<li><a href="#tag-' + tag + '" class="' + caclulateTagClass(allTags[tag], tagsParams) + '"><span>' + tag + '</span> </a></li>';
-        const tagLinkHTML = '<li>' + caclulateTagClass(allTags[tag], tagsParams) + '</li>';
+        allTagsHTML += `<li><a href="#tag-${tag}" class="${caclulateTagClass(allTags[tag], tagsParams)}"><span>${tag}</span> </a></li>`;
+        const tagLinkHTML = `<li>${caclulateTagClass(allTags[tag], tagsParams)}</li>`;
         console.log('taglinkHTML:', tagLinkHTML);
       }
       /* [NEW] END LOOP: for each tag in allTags: */
@@ -232,8 +231,8 @@ function tagClickHandler(event) {
 function addClickListenersToTags() {
 
   /* find all links to tags */
-const linksToTags = document.querySelectorAll('a[href^="#tag-"]');
-console.log(linksToTags);
+  const linksToTags = document.querySelectorAll('a[href^="#tag-"]');
+  console.log(linksToTags);
 
     /* START LOOP: for each link */
     for (let link of linksToTags) {
@@ -251,6 +250,7 @@ function calculateAuthorsParams(authors) {
   const MAX = 0;
   const MIN = 99999;
   const params = { max: MAX, min: MIN };
+
     for (let author in authors) {
       // if (!authors.hasOwnProperty(author)) {
       //   return;
@@ -266,12 +266,13 @@ function generateAuthors() {
   /* [NEW] create a new variable allTags with an empty object */
   let allAuthors = {};
   const articles = document.querySelectorAll(optArticleSelector);
+
     for (let article of articles) {
         const authorWrapper = article.querySelector(optArticleAuthorSelector);
         console.log(authorWrapper);
         let html = '';
         const articleAuthor = article.getAttribute('data-author');
-        const authorLink = '<a href="#author-' + articleAuthor + '"><span>by ' + articleAuthor + '</span></a>';
+        const authorLink = `<a href="#author-${articleAuthor}"><span>by ${articleAuthor}</span></a>`;
         html = html + authorLink
         console.log(authorLink);
         if (allAuthors[articleAuthor]) {
@@ -286,10 +287,11 @@ function generateAuthors() {
   let allAuthorsHTML = '';
   const authorsParams = calculateAuthorsParams(allAuthors);
   console.log('authorsParams:', authorsParams);
+
     for (let articleAuthor in allAuthors) {
-        allAuthorsHTML += '<li><a href="#author-' + articleAuthor  + caclulateTagClass(allAuthors[articleAuthor], authorsParams) + '"><span>' + articleAuthor + '(' + allAuthors[articleAuthor] + ')</span> </a></li>';
+        allAuthorsHTML += `<li><a href="#author-${articleAuthor}"><span>${articleAuthor}(${(allAuthors[articleAuthor])})</span> </a></li>`;
         console.log('allAuthorsHTML:', allAuthorsHTML);
-  }
+    }
   authorList.innerHTML = allAuthorsHTML;
 }
 
@@ -304,13 +306,15 @@ function authorClickHandler(event) {
   console.log(authorName);
   const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author-"]');
   console.log(activeAuthorLinks);
-      for (let link of activeAuthorLinks) {
-          link.classList.remove('active');
-      }
- const allAuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
-        for (let link of allAuthorLinks ) {
-            link.classList.add('active');
-        }
+
+    for (let link of activeAuthorLinks) {
+        link.classList.remove('active');
+    }
+  const allAuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
+
+    for (let link of allAuthorLinks ) {
+        link.classList.add('active');
+    }
 
   generateTitleLinks('[data-author="' + authorName + '"]');
 }
@@ -318,9 +322,9 @@ function authorClickHandler(event) {
 function addClickListenersToAuthors() {
 const linksToAuthors = document.querySelectorAll('a[href^="#author-"]');
 console.log(linksToAuthors);
-    for (let link of linksToAuthors) {
-        link.addEventListener('click', authorClickHandler);
-    }
+  for (let link of linksToAuthors) {
+      link.addEventListener('click', authorClickHandler);
+  }
 }
 
 addClickListenersToAuthors();

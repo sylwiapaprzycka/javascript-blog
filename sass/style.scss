@@ -8,8 +8,6 @@ $color-medium: #119DA4;
 $color-dark: #13505B;
 $color-superdark: #040404;
 
-
-
 $font-logo: 'Dancing Script', cursive;
 $font-header: 'Bebas Neue', cursive;
 $font-text: 'Lato', sans-serif;
@@ -53,7 +51,7 @@ a {
 }
 
 a:hover {
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 /* Layout */
 
@@ -118,46 +116,50 @@ a:hover {
   font-size: 14px;
   color: #ff6b6b;
   padding: 0 10px;
-    &.active {
-      font-size: 16px;
-    }
+
+  &.active {
+    font-size: 16px;
+  }
 }
 
 .tag-size-2 {
   font-size: 18px;
   color: #feca57;
   padding: 0 5px;
-    &.active {
-      font-size: 20px;
-    }
 
+  &.active {
+    font-size: 20px;
+  }
 }
 
 .tag-size-3 {
   font-size: 20px;
   color: #54a0ff;
   padding: 0 5px;
-    &.active {
-      font-size: 22px;
-    }
+
+  &.active {
+    font-size: 22px;
+  }
 }
 
 .tag-size-4 {
   font-size: 24px;
   color: $color-medium;
   padding: 0 5px;
-    &.active {
-      font-size: 26px;;
-    }
+
+  &.active {
+    font-size: 26px;;
+  }
 }
 
 .tag-size-5 {
   font-size: 30px;
   color: #341f97;
   padding: 0 5px;
-    &.active {
-      font-size: 32px;
-    }
+
+  &.active {
+    font-size: 32px;
+  }
 }
 
 .list-horizontal {
