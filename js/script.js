@@ -290,8 +290,8 @@ function generateAuthors() {
         const articleAuthor = article.getAttribute('data-author');
         // const authorLink = `<a href="#author-${articleAuthor}"><span>by ${articleAuthor}</span></a>`;
         const authorLinkData = { id: articleAuthor, title: articleAuthor };
-        const authorLink = templates.articleLink(authorLinkData);
-        html = html + authorLink
+        const authorLink = templates.authorLink(authorLinkData);
+        html = html + authorLink;
         console.log(authorLink);
         if (allAuthors[articleAuthor]) {
           allAuthors[articleAuthor]++;
@@ -310,6 +310,7 @@ function generateAuthors() {
     for (let articleAuthor in allAuthors) {
         // allAuthorsHTML += `<li><a href="#author-${articleAuthor}"><span>${articleAuthor}(${(allAuthors[articleAuthor])})</span> </a></li>`;
         allAuthorsData.authors.push({
+          articleAuthor,
           author: articleAuthor,
           count: allAuthors[articleAuthor]
         });
@@ -330,13 +331,13 @@ function authorClickHandler(event) {
   const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author-"]');
   console.log(activeAuthorLinks);
 
-    for (let link of activeAuthorLinks) {
-        link.classList.remove('active');
+    for (let authorActiveLink of activeAuthorLinks) {
+        authorActiveLink.classList.remove('active');
     }
   const allAuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
 
-    for (let link of allAuthorLinks ) {
-        link.classList.add('active');
+    for (let authorLink of allAuthorLinks ) {
+        authorLink.classList.add('active');
     }
 
   generateTitleLinks('[data-author="' + authorName + '"]');
